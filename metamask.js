@@ -134,7 +134,7 @@ async function votarPerm(){
         acesso = false
     }else if(nft[0]["_hex"] != []){
         console.log('ENTROUUUU')
-        votoForm.innerHTML = "<p><h2>Contagem</h2><h3>Bicicleta azul: <span id='contAzul'>0</span></h3><h3>Bicicleta amarela: <span id='contAmarelo'>0</span></h3><input type='radio' name='option' value='azul'>Bicicleta azul<input type='radio' name='option' value='amarela'>Bicicleta amarela<button onclick='enviarVoto()'>Votar</button></p>"
+        votoForm.innerHTML = "<p><h2>Contagem</h2><h3>Bicicleta azul: <span id='contAzul'>0</span></h3><h3>Bicicleta amarela: <span id='contAmarelo'>0</span></h3><button onclick='consultarVotos()'>Atualizar Contagem</button><br><input type='radio' name='option' value='azul'>Bicicleta azul<input type='radio' name='option' value='amarela'>Bicicleta amarela<button onclick='enviarVoto()'>Votar</button></p>"
         acesso = true
         await consultarVotos()
     }
@@ -158,6 +158,7 @@ async function consultarVotos(){
         contAmarelo.innerHTML = totAmarelo
     }
 }
+
 
 async function enviarVoto(){
     if(acesso == false){
